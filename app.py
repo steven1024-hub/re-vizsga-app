@@ -46,6 +46,7 @@ st.markdown("""
             border-radius: 0.5rem;
             padding: 0.5rem 1rem;
         }
+        /* Rádió kérdésdoboz */
         .stRadio > div {
             background-color: #ffffff;
             color: #2c3e50 !important;
@@ -54,6 +55,27 @@ st.markdown("""
             margin-bottom: 0.5rem;
             border: 1px solid #ddd;
         }
+
+        /* A válaszopciók (label-ek) színe */
+        .stRadio label {
+            color: #2c3e50 !important;
+            font-weight: 500;
+        }
+
+        /* Kérdés fejléc (ha van formában) */
+        .stForm label {
+            color: #2c3e50 !important;
+        }
+
+        /* Gombok */
+        .stButton > button {
+            background-color: #2f80ed;
+            color: white;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+
         .stSelectbox > div {
             background-color: #ffffffcc;
         }

@@ -1,4 +1,6 @@
 import streamlit as st
+
+# 🌐 Egységes megjelenítésű HTML szekciókhoz
 def render_section(title, icon, color, content_en, content_hu):
     st.markdown(
         f"""
@@ -11,21 +13,19 @@ def render_section(title, icon, color, content_en, content_hu):
         unsafe_allow_html=True
     )
 
+# Alapbeállítások
 st.set_page_config(page_title="📘 RE Vizsgafelkészítő – Modul 1", layout="wide")
 st.title("📘 Introduction and Overview of Requirements Engineering (Modul 1)")
 st.markdown("#### 💡 Ismerd meg a Requirements Engineering alapjait – angolul és magyarul")
 
-# 👇 Alfejezetválasztó
-section = st.selectbox("Válassz alfejezetet:", [
-    "1.1 What is Requirements Engineering?",
-    "1.2 Why is RE important?",
-    "1.3 Where is RE applied?",
-    "1.4 How is RE performed?",
-    "1.5 Role and Tasks of a Requirements Engineer",
-    "1.6 What to Learn about RE"
+# Nézetválasztó
+section = st.selectbox("Válassz nézetet:", [
+    "📘 Elméleti áttekintés",
+    "🎴 Tanulókártyák",
+    "✅ Kérdőíves Vizsga"
 ])
 
-# 🎨 Színek és ikonok hozzárendelése
+# Színek és ikonok
 colors = {
     "1.1": "#e6f0ff", "1.2": "#e6ffe6", "1.3": "#fff5cc",
     "1.4": "#f0e6ff", "1.5": "#ffe6e6", "1.6": "#f2f2f2"
@@ -33,60 +33,140 @@ colors = {
 icons = {
     "1.1": "📘", "1.2": "💡", "1.3": "🌍", "1.4": "⚙️", "1.5": "👤", "1.6": "🎓"
 }
-code = section[:3]
-
-# 🌐 Kétnyelvű tartalom
-if section == "1.1 What is Requirements Engineering?":
-    render_section(
-    "1.1 What is Requirements Engineering?",
-    icons[code],
-    colors[code],
-    "Requirements Engineering (RE) is about specifying and managing what stakeholders need a system to do. It distinguishes between three types of requirements: functional, quality, and constraints.",
-    "A Requirements Engineering (RE) célja a rendszerekkel szemben támasztott igények meghatározása és kezelése. Három fő követelménytípus létezik: funkcionális, minőségi (quality), és korlátozások (constraints)."
-    )
-
-elif section == "1.2 Why is RE important?":
-    render_section(
-        "1.2 Why is Requirements Engineering important?",
-        icons[code],
-        colors[code],
-        "Good RE reduces risks, improves understanding, enables cost estimation, and lays the foundation for testing. Poor RE leads to unclear or missing requirements.",
-        "A jó RE csökkenti a hibák kockázatát, javítja a megértést, segíti a költségbecslést és tesztelést. A rossz RE homályos vagy hiányzó követelményekhez vezet."
-    )
-
-
-elif section == "1.3 Where is RE applied?":
-    render_section(
+# 📘 Elméleti áttekintés
+if section == "📘 Elméleti áttekintés":
+    chosen = st.selectbox("Válassz alfejezetet:", [
+        "1.1 What is Requirements Engineering?",
+        "1.2 Why is RE important?",
         "1.3 Where is RE applied?",
-        icons[code],
-        colors[code],
-        "RE is used for any kind of system – especially in software-heavy systems involving physical and organizational elements. Requirements may be system, stakeholder, user, domain or business-related.",
-        "Az RE bármilyen rendszerre alkalmazható, különösen szoftverközpontú rendszerekben. A követelmények származhatnak rendszer-, stakeholder-, felhasználói-, üzleti- vagy doménszintről."
-    )
-
-elif section == "1.4 How is RE performed?":
-    render_section(
-        "1.4 How is Requirements Engineering performed?",
-        icons[code],
-        colors[code],
-        "The major tasks in RE are elicitation, documentation, validation, and management of requirements. Tool support may help. Requirements analysis and conflict resolution are considered part of elicitation. To perform RE properly, a tailored RE process must be chosen.",
-        "Az RE fő feladatai: követelmények feltárása, dokumentálása, érvényesítése és kezelése. A szerszámtámogatás (tool support) segíthet. A követelmények elemzése és a konfliktuskezelés a feltárás része. A RE megfelelő végrehajtásához a folyamatot testre kell szabni."
-    )
-
-elif section == "1.5 Role and Tasks of a Requirements Engineer":
-    render_section(
+        "1.4 How is RE performed?",
         "1.5 Role and Tasks of a Requirements Engineer",
-        icons[code],
-        colors[code],
-        "A Requirements Engineer is a role (not necessarily a job title) taken by those who elicit, document, validate, and manage requirements. They have in-depth knowledge of RE and bridge the gap between problems and potential solutions.",
-        "A Requirements Engineer nem feltétlenül munkakör, hanem szerep, amit azok töltenek be, akik követelményeket gyűjtenek, dokumentálnak, érvényesítenek és kezelnek. Mély ismereteik vannak az RE-ről, és hidat képeznek a problémák és a lehetséges megoldások között."
-    )
+        "1.6 What to Learn about RE"
+    ])
+    code = chosen[:3]
 
-elif section == "1.6 What to Learn about RE":
-    render_section(
-        "1.6 What to Learn about Requirements Engineering",
-        icons[code],
-        colors[code],
-        "The syllabus covers fundamental RE principles, documenting requirements in various ways, elaboration techniques, suitable processes, managing existing requirements, and tool support.",
-        "Ez a tananyag lefedi az RE alapelveit, a követelmények dokumentálásának különféle formáit, a kibontás gyakorlatait, a megfelelő folyamatok használatát, a követelmények kezelését és az eszköztámogatást."
-    )
+    if chosen == "1.1 What is Requirements Engineering?":
+        render_section(
+            chosen, icons[code], colors[code],
+            "Requirements Engineering (RE) is about specifying and managing what stakeholders need a system to do. It distinguishes between three types of requirements: functional, quality, and constraints.",
+            "A Requirements Engineering (RE) célja a rendszerekkel szemben támasztott igények meghatározása és kezelése. Három fő követelménytípus létezik: funkcionális, minőségi, és korlátozó jellegű."
+        )
+    elif chosen == "1.2 Why is RE important?":
+        render_section(
+            chosen, icons[code], colors[code],
+            "Good RE reduces the risk of developing the wrong system, improves understanding, supports estimation, and provides a basis for testing.",
+            "A jó RE csökkenti a hibás rendszerfejlesztés kockázatát, javítja a problémamegértést, támogatja a becslést, és alapot ad a teszteléshez."
+        )
+    elif chosen == "1.3 Where is RE applied?":
+        render_section(
+            chosen, icons[code], colors[code],
+            "RE is applied to any type of system, but especially where software, physical and organizational elements are involved.",
+            "Az RE bármilyen típusú rendszernél alkalmazható, különösen ott, ahol szoftveres, fizikai és szervezeti elemek vannak jelen."
+        )
+    elif chosen == "1.4 How is RE performed?":
+        render_section(
+            chosen, icons[code], colors[code],
+            "Main tasks in RE include elicitation, documentation, validation and management of requirements. Tailoring the RE process is essential.",
+            "Az RE fő feladatai: követelmények feltárása, dokumentálása, érvényesítése és kezelése. A folyamat testreszabása elengedhetetlen."
+        )
+    elif chosen == "1.5 Role and Tasks of a Requirements Engineer":
+        render_section(
+            chosen, icons[code], colors[code],
+            "RE is a role, not a job title. They elicit, document, validate and manage requirements while bridging the gap between problems and solutions.",
+            "A Requirements Engineer egy szerep, nem feltétlenül munkakör. Követelményeket tárnak fel, dokumentálnak, érvényesítenek és kezelnek – hidat képeznek a probléma és a megoldás között."
+        )
+    elif chosen == "1.6 What to Learn about RE":
+        render_section(
+            chosen, icons[code], colors[code],
+            "The syllabus includes principles of RE, documentation practices, elaboration techniques, processes, management, and tools.",
+            "A tananyag lefedi az RE alapelveit, dokumentációs gyakorlatokat, kibontási technikákat, folyamatokat, menedzsmentet és eszközöket."
+        )
+
+# 🎴 Tanulókártyák
+elif section == "🎴 Tanulókártyák":
+    st.subheader("🧠 Tanulókártyás gyakorlás")
+    flashcards = {
+        "Mi a RE célja?": "A stakeholder-ek igényeinek meghatározása és kezelése.",
+        "Miért fontos a RE?": "Csökkenti a hibakockázatot, támogatja a megértést és a tesztelhetőséget.",
+        "Hol alkalmazzák a RE-t?": "Mindenféle rendszernél, főleg szoftverközpontú és komplex rendszerekben.",
+        "Hogyan történik a RE?": "Feltárás, dokumentálás, érvényesítés, kezelés — testreszabott folyamatban.",
+        "Ki a Requirements Engineer?": "Az a személy, aki a követelményeket összegyűjti, kezeli, és közvetít a problémák és megoldások között.",
+        "Mit kell megtanulni RE-ből?": "Elveket, dokumentálási módszereket, kibontást, folyamatokat, menedzsmentet, eszközöket."
+    }
+
+    for question, answer in flashcards.items():
+        with st.expander(f"❓ {question}"):
+            st.write(f"✅ {answer}")
+# ✅ Kérdőíves Vizsga
+elif section == "✅ Kérdőíves Vizsga":
+    st.subheader("✅ Kérdőíves vizsga – Modul 1")
+    score = 0
+    total = 6
+
+    with st.form("modul1_quiz"):
+        st.write("Válaszolj a következő kérdésekre:")
+
+        q1 = st.radio("1. Mi a Requirements Engineering elsődleges célja?", [
+            "Rendszerek tesztelése és karbantartása",
+            "Stakeholder-ek igényeinek meghatározása és kezelése",
+            "Projektköltségek kiszámítása"
+        ])
+
+        q2 = st.radio("2. Mi jellemző a jó RE-re?", [
+            "Csak a fejlesztés végén kezdődik",
+            "Minimalizálja a dokumentációt",
+            "Csökkenti a hibakockázatot, segíti a megértést és a becslést"
+        ])
+
+        q3 = st.radio("3. Milyen rendszerekre alkalmazható RE?", [
+            "Csak webes alkalmazásokra",
+            "Mindenféle rendszerre, különösen komplex szoftveres rendszerekre",
+            "Kizárólag üzleti szoftverekre"
+        ])
+
+        q4 = st.radio("4. Melyik NEM tartozik az RE fő tevékenységei közé?", [
+            "Követelmények feltárása",
+            "Kódoptimalizálás",
+            "Követelmények érvényesítése"
+        ])
+
+        q5 = st.radio("5. Milyen szerepet tölt be a Requirements Engineer?", [
+            "Hardvertechnikus",
+            "A problémák és megoldások közötti kapcsolatot teremti meg",
+            "Marketing asszisztens"
+        ])
+
+        q6 = st.radio("6. Mit ölel fel az RE alapszintű tananyaga?", [
+            "Projektmenedzsment és erőforrás-allokáció",
+            "Tesztelési stratégiák és hibakeresés",
+            "RE alapelvek, dokumentálás, kibontás, folyamatok, menedzsment, eszközök"
+        ])
+
+        submitted = st.form_submit_button("Eredmények megtekintése")
+
+    if submitted:
+        # Értékelés
+        if q1 == "Stakeholder-ek igényeinek meghatározása és kezelése": score += 1
+        if q2 == "Csökkenti a hibakockázatot, segíti a megértést és a becslést": score += 1
+        if q3 == "Mindenféle rendszerre, különösen komplex szoftveres rendszerekre": score += 1
+        if q4 == "Kódoptimalizálás": score += 1
+        if q5 == "A problémák és megoldások közötti kapcsolatot teremti meg": score += 1
+        if q6 == "RE alapelvek, dokumentálás, kibontás, folyamatok, menedzsment, eszközök": score += 1
+
+        percent = round((score / total) * 100)
+        st.subheader(f"🎯 Eredményed: {score}/{total} – {percent}%")
+
+        # Feedback blokk
+        if percent == 100:
+            st.success("🌟 Gratulálunk! Teljesítetted a Modul 1 összes kérdését hibátlanul!")
+            st.balloons()
+            st.markdown("### 🎓 **Modul 1 teljesítve!**\n\nKiváló alapokat szereztél a következő témakörhöz.")
+        elif percent >= 80:
+            st.success("🎉 Nagyon jó! Már csak egy kis finomhangolás van hátra.")
+        elif percent >= 60:
+            st.warning("🙂 Jó úton jársz, de érdemes még egy kicsit átnézni a tananyagot.")
+        else:
+            st.error("😅 Ne csüggedj! A tanulókártyák segíthetnek az ismétlésben.")
+
+        st.markdown("---")
+        st.markdown("👉 **Tipp**: Próbáld ki újra a tanulókártyákat vagy nézd át az elméleti összefoglalót, mielőtt továbblépnél a 2. modulra.")

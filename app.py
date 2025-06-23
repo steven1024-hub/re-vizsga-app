@@ -10,7 +10,7 @@ def render_section(title, icon, color, content_en, content_hu):
              margin-bottom:2rem;
              border: 1px solid #ccc;
              box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
-             color:#2c3e50'>
+             color: #2c3e50'>
 
         </div>
         """,

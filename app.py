@@ -81,6 +81,10 @@ section = st.selectbox("Válassz nézetet:", [
     "🎴 Tanulókártyák",
     "✅ Kérdőíves Vizsga"
 ])
+if st.session_state.get("modul1_completed"):
+    options.append("📗 Fundamental Principles of RE")  # Modul 2 címe
+
+section = st.selectbox("Válassz nézetet:", options)
 
 # Színek és ikonok
 colors = {
@@ -222,7 +226,12 @@ elif section == "✅ Kérdőíves Vizsga":
 
         percent = round((score / total) * 100)
         st.subheader(f"🎯 Eredményed: {score}/{total} – {percent}%")
-
+    if score >= 5:
+        st.success("✅ Teljesítetted az 1. modult — feloldva a következő szint!")
+        st.session_state["modul1_completed"] = True
+    else:
+        st.warning("🔒 A modul 2 csak akkor elérhető, ha legalább 5 helyes válaszod van.")
+        
         if percent == 100:
             st.success("🌟 Gratulálunk! Teljesítetted a Modul 1 összes kérdését hibátlanul!")
             st.balloons()
@@ -236,4 +245,12 @@ elif section == "✅ Kérdőíves Vizsga":
 
         st.markdown("---")
         st.markdown("👉 Tipp: Próbáld ki újra a tanulókártyákat vagy nézd át az elméleti összefoglalót, mielőtt továbblépsz a 2. modulra.")
+        elif section == "📗 Fundamental Principles of RE":
+            st.subheader("📗 Fundamental Principles of Requirements Engineering – Modul 2")
+            st.markdown("✅ Ez a szakasz részletesen bemutatja az RE kilenc alapelvét és azok gyakorlati alkalmazását.")
 
+            render_section(
+                "2.1 Overview of Principles", "📗", "#3d5c3d",
+                "Requirements Engineering is guided by nine universal principles...",
+                "A Requirements Engineering kilenc univerzális alapelvre épül..."
+            )

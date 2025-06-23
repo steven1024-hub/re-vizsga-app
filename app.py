@@ -82,11 +82,11 @@ options = [
     "✅ Kérdőíves Vizsga"
 ]
 
+# Ha az 1. modult teljesítette a felhasználó, akkor feloldjuk a 2. modult
 if st.session_state.get("modul1_completed"):
     options.append("📗 Fundamental Principles of RE")
 
 section = st.selectbox("Válassz nézetet:", options)
-
 
 # Színek és ikonok
 colors = {
@@ -248,6 +248,7 @@ elif section == "✅ Kérdőíves Vizsga":
 
         st.markdown("---")
         st.markdown("👉 Tipp: Próbáld ki újra a tanulókártyákat vagy nézd át az elméleti összefoglalót, mielőtt továbblépsz a 2. modulra.")
+# 📗 Modul 2 – csak akkor választható, ha előző modul teljesült
 elif section == "📗 Fundamental Principles of RE":
     st.subheader("📗 Fundamental Principles of Requirements Engineering – Modul 2")
     st.markdown("✅ Ez a szakasz részletesen bemutatja az RE kilenc alapelvét és azok gyakorlati alkalmazását.")
@@ -255,7 +256,7 @@ elif section == "📗 Fundamental Principles of RE":
     render_section(
         "2.1 Overview of Principles", "📗", "#3d5c3d",
         "Requirements Engineering is governed by nine universal principles: value-orientation, stakeholder orientation, shared understanding, context awareness, separation of concerns between problems, requirements and solutions, validation, evolution, innovation, and systematic work. These principles apply across RE tasks, regardless of domain or method.",
-        "A Requirements Engineering kilenc univerzális alapelv mentén működik: értékorientáltság, stakeholder-központúság, közös megértés, kontextus-tudatosság, a problémák, követelmények és megoldások szétválasztása, érvényesítés, változáskezelés, innováció, valamint rendszerszemléletű és fegyelmezett munka. Ezek minden RE-feladatra alkalmazhatók, függetlenül a területtől vagy módszertől."
+        "A Requirements Engineering kilenc univerzális alapelv mentén működik: értékorientáltság, stakeholder-központúság, közös megértés, kontextus-tudatosság, a problémák, követelmények és megoldások szétválasztása, érvényesítés, változáskezelés, innováció, valamint rendszerszemléletű és fegyelmezett munka."
     )
 
     render_section(
@@ -273,11 +274,10 @@ elif section == "📗 Fundamental Principles of RE":
     render_section(
         "2.4 Managing change and fostering innovation", "♻️", "#3d5c3d",
         "Requirements evolve. RE must embrace change while maintaining traceability and consistency. Beyond fulfilling explicit needs, RE should strive to surprise and delight users through innovative solutions.",
-        "A követelmények változnak. Az RE-nek fel kell készülnie a változások kezelésére úgy, hogy közben a követelmények nyomon követhetők és konzisztens formában maradjanak. Az RE célja nem csupán a kimondott igények kielégítése, hanem innovatív megoldásokon keresztül a pozitív meglepetés és öröm kiváltása is."
+        "A követelmények változnak. Az RE-nek fel kell készülnie a változások kezelésére, miközben biztosítja a nyomon követhetőséget és a konzisztenciát. Az RE célja nem csupán a kifejezett igények teljesítése, hanem az is, hogy innovatív megoldásokkal örömet szerezzen a felhasználóknak."
     )
 
     render_section(
         "2.5 Disciplined and adaptive RE practices", "🛠️", "#3d5c3d",
-        "RE requires systematic, adaptable practices tailored to each project's context. No single method fits all situations, so RE professionals must choose and adjust approaches carefully.",
-        "Az RE szisztematikus, ugyanakkor rugalmas gyakorlatokat igényel, amelyeket az adott projekt környezetéhez kell igazítani. Nincs univerzális módszer; az RE-szakembereknek mindig a helyzethez legjobban illeszkedő megközelítést kell alkalmazniuk."
+        "RE requires systematic
     )

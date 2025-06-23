@@ -72,6 +72,12 @@ st.markdown("""
 
 # Alapbeállítások
 st.set_page_config(page_title="📘 RE Vizsgafelkészítő – Modul 1", layout="wide")
+if "go_to_second_block" not in st.session_state:
+    st.session_state["go_to_second_block"] = False
+if st.button("Ugrás a 2. blokkra"):
+    st.session_state["go_to_second_block"] = True
+    st.experimental_rerun()
+
 st.title("📘 Introduction and Overview of Requirements Engineering (Modul 1)")
 st.markdown("#### 💡 Ismerd meg a Requirements Engineering alapjait – angolul és magyarul")
 
@@ -252,6 +258,16 @@ elif section == "✅ Kérdőíves Vizsga":
 elif section == "📗 Fundamental Principles of RE":
     st.subheader("📗 Fundamental Principles of Requirements Engineering – Modul 2")
     st.markdown("✅ Ez a szakasz részletesen bemutatja az RE kilenc alapelvét és azok gyakorlati alkalmazását.")
+# Első blokk
+render_section("Első blokk", "📌", "#228B22", "First block EN", "Első blokk HU")
+
+# Ha ugorni kell a 2. blokkra
+if st.session_state.get("go_to_second_block"):
+    render_section("Második blokk", "🧩", "#4455cc", "Second block EN", "Második blokk HU")
+    st.session_state["go_to_second_block"] = False  # Visszaállítjuk, hogy ne ismételjen
+else:
+    # További tartalom, ha nem ugrottunk
+    render_section("Harmadik blokk", "🎯", "#cc3344", "Third block EN", "Harmadik blokk HU")
 
     render_section(
         "2.1 Overview of Principles", "📗", "#3d5c3d",

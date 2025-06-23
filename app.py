@@ -54,11 +54,15 @@ st.markdown("""
             margin-bottom: 0.5rem;
             border: 1px solid #ddd;
         }
-
-
         .stSelectbox > div {
             background-color: #ffffffcc;
         }
+        /* ⬅️ Új blokk: kérdéscímkék */
+        .stRadio label {
+            color: #2c3e50 !important;
+            font-weight: 500;
+    }
+
     </style>
 """, unsafe_allow_html=True)
 

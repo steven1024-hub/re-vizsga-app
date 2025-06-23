@@ -2,7 +2,7 @@ import streamlit as st
 def render_section(title, icon, color, content_en, content_hu):
     st.markdown(
         f"""
-        <div style='background-color: {color}; padding:1rem; border-radius:0.75rem; margin-bottom:1.5rem'>
+        <div style='background-color: {color}; padding:1rem; border-radius:0.75rem; margin-bottom:1.5rem; color:#000000'>
             <h3>{icon} {title}</h3>
             <p><strong>EN:</strong> {content_en}</p>
             <p><strong>HU:</strong> {content_hu}</p>

@@ -109,40 +109,46 @@ if section == "📘 Elméleti áttekintés":
 
     if chosen == "1.1 What is Requirements Engineering?":
         render_section(
-            chosen, icons[code], colors[code],
-            "Requirements Engineering (RE) is about specifying and managing what stakeholders need a system to do. It distinguishes between three types of requirements: functional, quality, and constraints.",
-            "A Requirements Engineering (RE) célja a rendszerekkel szemben támasztott igények meghatározása és kezelése. Három fő követelménytípus létezik: funkcionális, minőségi, és korlátozó jellegű."
+            chosen, icons[code], "#3d5c3d",
+            "Requirements Engineering (RE) is the systematic process of discovering, analyzing, documenting, validating, and managing the requirements of a system. It aims to ensure that the system to be developed meets the desires and needs of its stakeholders. RE distinguishes between functional requirements (what the system should do), quality requirements (how well it should perform), and constraints (limitations on the solution space).",
+            "A Requirements Engineering (RE) egy strukturált folyamat, amely magában foglalja a követelmények feltárását, elemzését, dokumentálását, érvényesítését és kezelését. Célja, hogy a fejlesztendő rendszer megfeleljen az érintettek igényeinek és elvárásainak. Az RE megkülönbözteti a funkcionális követelményeket (mit kell tennie a rendszernek), a minőségi követelményeket (milyen szinten kell teljesítenie), valamint a korlátozásokat (a megoldási térre vonatkozó megszorítások)."
         )
+
     elif chosen == "1.2 Why is RE important?":
         render_section(
-            chosen, icons[code], colors[code],
-            "Good RE reduces the risk of developing the wrong system, improves understanding, supports estimation, and provides a basis for testing.",
-            "A jó RE csökkenti a hibás rendszerfejlesztés kockázatát, javítja a problémamegértést, támogatja a becslést, és alapot ad a teszteléshez."
+            chosen, icons[code], "#3d5c3d",
+            "Adequate RE reduces the risk of developing the wrong system, improves understanding of the problem, supports estimation of effort and cost, and provides a basis for testing. Inadequate RE often leads to missing, unclear, or incorrect requirements due to rushed implementation, poor communication, or lack of RE skills.",
+            "A megfelelő RE csökkenti annak kockázatát, hogy hibás rendszert fejlesszünk, javítja a probléma megértését, támogatja a ráfordítás és költség becslését, valamint alapot ad a teszteléshez. Az elégtelen RE gyakran hiányzó, homályos vagy hibás követelményekhez vezet, amit sietség, kommunikációs problémák vagy a RE ismeretének hiánya okoz."
         )
+
     elif chosen == "1.3 Where is RE applied?":
         render_section(
-            chosen, icons[code], colors[code],
-            "RE is applied to any type of system, but especially where software, physical and organizational elements are involved.",
-            "Az RE bármilyen típusú rendszernél alkalmazható, különösen ott, ahol szoftveres, fizikai és szervezeti elemek vannak jelen."
+            chosen, icons[code], "#3d5c3d",
+            "RE is applicable to any kind of system, especially those involving software, physical components, and organizational elements. Requirements can be categorized as system, stakeholder, user, domain, or business requirements, depending on their origin and perspective.",
+            "Az RE bármilyen típusú rendszerre alkalmazható, különösen olyanokra, amelyek szoftveres, fizikai és szervezeti elemeket tartalmaznak. A követelmények lehetnek rendszer-, stakeholder-, felhasználói-, domain- vagy üzleti követelmények, attól függően, hogy honnan származnak és milyen nézőpontot képviselnek."
         )
+
     elif chosen == "1.4 How is RE performed?":
         render_section(
-            chosen, icons[code], colors[code],
-            "Main tasks in RE include elicitation, documentation, validation and management of requirements. Tailoring the RE process is essential.",
-            "Az RE fő feladatai: követelmények feltárása, dokumentálása, érvényesítése és kezelése. A folyamat testreszabása elengedhetetlen."
+            chosen, icons[code], "#3d5c3d",
+            "The main RE tasks include elicitation, documentation, validation, and management of requirements. These tasks are supported by tools and must be tailored to the specific context. Conflict resolution and analysis are also part of the elicitation process.",
+            "Az RE fő feladatai a követelmények feltárása, dokumentálása, érvényesítése és kezelése. Ezeket a feladatokat eszközök is támogathatják, és a konkrét környezethez kell igazítani őket. A konfliktuskezelés és elemzés szintén a feltárási folyamat része."
         )
+
     elif chosen == "1.5 Role and Tasks of a Requirements Engineer":
         render_section(
-            chosen, icons[code], colors[code],
-            "RE is a role, not a job title. They elicit, document, validate and manage requirements while bridging the gap between problems and solutions.",
-            "A Requirements Engineer egy szerep, nem feltétlenül munkakör. Követelményeket tárnak fel, dokumentálnak, érvényesítenek és kezelnek – hidat képeznek a probléma és a megoldás között."
+            chosen, icons[code], "#3d5c3d",
+            "A Requirements Engineer is a role (not necessarily a job title) responsible for eliciting, documenting, validating, and managing requirements. They bridge the gap between problems and solutions and often collaborate with stakeholders, developers, and analysts.",
+            "A Requirements Engineer egy szerep (nem feltétlenül munkakör), aki a követelmények feltárásáért, dokumentálásáért, érvényesítéséért és kezeléséért felel. Ő képezi a hidat a problémák és a megoldások között, és gyakran működik együtt érintettekkel, fejlesztőkkel és elemzőkkel."
         )
+
     elif chosen == "1.6 What to Learn about RE":
         render_section(
-            chosen, icons[code], colors[code],
-            "The syllabus includes principles of RE, documentation practices, elaboration techniques, processes, management, and tools.",
-            "A tananyag lefedi az RE alapelveit, dokumentációs gyakorlatokat, kibontási technikákat, folyamatokat, menedzsmentet és eszközöket."
+            chosen, icons[code], "#3d5c3d",
+            "The CPRE syllabus covers RE principles, documentation techniques, elaboration practices, process configuration, requirements management, and tool support. It provides a foundational skill set for anyone involved in RE.",
+            "A CPRE tananyag lefedi az RE alapelveit, dokumentációs technikáit, kibontási gyakorlatokat, folyamatkonfigurációt, követelménykezelést és eszköztámogatást. Ez egy alapvető készségkészletet biztosít minden RE-ben érintett számára."
         )
+
 
 # 🎴 Tanulókártyák
 elif section == "🎴 Tanulókártyák":

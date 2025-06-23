@@ -25,7 +25,7 @@ st.markdown("""
         .stApp {
             background-color: #001f3f;
             font-family: 'Segoe UI', sans-serif;
-            color: #ffffff;
+            color: #fffdd0;
         }
 
         html, body {
@@ -34,7 +34,7 @@ st.markdown("""
         }
 
         h1, h2, h3, h4 {
-            color: #ffffff;
+            color: #fffdd0;
         }
 
         .stButton > button {
@@ -55,7 +55,7 @@ st.markdown("""
         }
 
         .stRadio label {
-            color: #ffffff !important;
+            color: #fffdd0 !important;
             font-weight: 500;
         }
 

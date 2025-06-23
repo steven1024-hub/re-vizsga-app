@@ -16,10 +16,16 @@ def render_section(title, icon, color, content_en, content_hu):
 st.markdown("""
     <style>
         .stApp {
-            background-image: linear-gradient(to bottom right, #f5f8fc, #ebf0f5);
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/ERP_components_diagram.png/1200px-ERP_components_diagram.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            background-attachment: fixed;
+            background-color: #f8fbff;
             font-family: 'Segoe UI', sans-serif;
             color: #2c3e50;
         }
+        
         html, body {
             color: #2c3e50;
             background-color: #f5f8fc;

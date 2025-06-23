@@ -4,10 +4,14 @@ import streamlit as st
 def render_section(title, icon, color, content_en, content_hu):
     st.markdown(
         f"""
-        <div style='background-color: {color}; padding:1rem; border-radius:0.75rem; margin-bottom:1.5rem; color:#000000'>
-            <h3>{icon} {title}</h3>
-            <p><strong>EN:</strong> {content_en}</p>
-            <p><strong>HU:</strong> {content_hu}</p>
+        <div style='background-color: {color};
+             padding:1.5rem;
+             border-radius:0.75rem;
+             margin-bottom:2rem;
+             border: 1px solid #ccc;
+             box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
+             color:#2c3e50'>
+
         </div>
         """,
         unsafe_allow_html=True

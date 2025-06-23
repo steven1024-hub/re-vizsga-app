@@ -47,11 +47,14 @@ st.markdown("""
             padding: 0.5rem 1rem;
         }
         .stRadio > div {
-            background-color: #ffffffcc;
+            background-color: #ffffff;
+            color: #2c3e50;
             padding: 0.75rem;
             border-radius: 0.5rem;
             margin-bottom: 0.5rem;
+            border: 1px solid #ddd;
         }
+
         .stSelectbox > div {
             background-color: #ffffffcc;
         }

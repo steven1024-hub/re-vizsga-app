@@ -69,9 +69,10 @@ section = st.selectbox("Válassz nézetet:", [
 ])
 
 # Színek és ikonok
-colors = {
-    "1.1": "#e6f0ff", "1.2": "#e6ffe6", "1.3": "#fff5cc",
-    "1.4": "#f0e6ff", "1.5": "#ffe6e6", "1.6": "#f2f2f2"
+ccolors = {
+    "1.1": "#fdf8e3",  # halvány sárga
+    "1.2": "#e6ffe6",  # halvány zöld
+    ...
 }
 icons = {
     "1.1": "📘", "1.2": "💡", "1.3": "🌍", "1.4": "⚙️", "1.5": "👤", "1.6": "🎓"

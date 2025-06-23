@@ -48,12 +48,13 @@ st.markdown("""
         }
         .stRadio > div {
             background-color: #ffffff;
-            color: #2c3e50;
+            color: #2c3e50 !important;
             padding: 0.75rem;
             border-radius: 0.5rem;
             margin-bottom: 0.5rem;
             border: 1px solid #ddd;
         }
+
 
         .stSelectbox > div {
             background-color: #ffffffcc;

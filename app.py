@@ -2,6 +2,35 @@ import streamlit as st
 
 # 🌐 Egységes megjelenítésű HTML szekciókhoz
 def render_section(title, icon, color, content_en, content_hu):
+    # 💄 Egyéni stílus – modern, világos dizájn
+st.markdown("""
+    <style>
+        .stApp {
+            background: linear-gradient(to right, #f8fbff, #eaf2f8);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        html, body {
+            color: #2c3e50;
+            background-color: #f8fbff;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .stButton > button {
+            background-color: #2f80ed;
+            color: white;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+        .stRadio > div {
+            background-color: #ffffffcc;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+""", unsafe_allow_html=True)
     st.markdown(
         f"""
         <div style='background-color: {color}; padding:1rem; border-radius:0.75rem; margin-bottom:1.5rem; color:#000000'>

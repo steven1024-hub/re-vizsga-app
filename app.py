@@ -64,29 +64,29 @@ elif section == "1.3 Where is RE applied?":
         "Az RE bármilyen rendszerre alkalmazható, különösen szoftverközpontú rendszerekben. A követelmények származhatnak rendszer-, stakeholder-, felhasználói-, üzleti- vagy doménszintről."
     )
 
-elif section == "1.4 Where is RE applied?":
+elif section == "1.4 How is RE performed?":
     render_section(
-        "1.3 Where is RE applied?",
+        "1.4 How is Requirements Engineering performed?",
         icons[code],
         colors[code],
-        "RE is used for any kind of system – especially in software-heavy systems involving physical and organizational elements. Requirements may be system, stakeholder, user, domain or business-related.",
-        "Az RE bármilyen rendszerre alkalmazható, különösen szoftverközpontú rendszerekben. A követelmények származhatnak rendszer-, stakeholder-, felhasználói-, üzleti- vagy doménszintről."
+        "The major tasks in RE are elicitation, documentation, validation, and management of requirements. Tool support may help. Requirements analysis and conflict resolution are considered part of elicitation. To perform RE properly, a tailored RE process must be chosen.",
+        "Az RE fő feladatai: követelmények feltárása, dokumentálása, érvényesítése és kezelése. A szerszámtámogatás (tool support) segíthet. A követelmények elemzése és a konfliktuskezelés a feltárás része. A RE megfelelő végrehajtásához a folyamatot testre kell szabni."
     )
 
-elif section == "1.5 Where is RE applied?":
+elif section == "1.5 Role and Tasks of a Requirements Engineer":
     render_section(
-        "1.3 Where is RE applied?",
+        "1.5 Role and Tasks of a Requirements Engineer",
         icons[code],
         colors[code],
-        "RE is used for any kind of system – especially in software-heavy systems involving physical and organizational elements. Requirements may be system, stakeholder, user, domain or business-related.",
-        "Az RE bármilyen rendszerre alkalmazható, különösen szoftverközpontú rendszerekben. A követelmények származhatnak rendszer-, stakeholder-, felhasználói-, üzleti- vagy doménszintről."
+        "A Requirements Engineer is a role (not necessarily a job title) taken by those who elicit, document, validate, and manage requirements. They have in-depth knowledge of RE and bridge the gap between problems and potential solutions.",
+        "A Requirements Engineer nem feltétlenül munkakör, hanem szerep, amit azok töltenek be, akik követelményeket gyűjtenek, dokumentálnak, érvényesítenek és kezelnek. Mély ismereteik vannak az RE-ről, és hidat képeznek a problémák és a lehetséges megoldások között."
     )
 
-elif section == "1.6 Where is RE applied?":
+elif section == "1.6 What to Learn about RE":
     render_section(
-        "1.3 Where is RE applied?",
+        "1.6 What to Learn about Requirements Engineering",
         icons[code],
         colors[code],
-        "RE is used for any kind of system – especially in software-heavy systems involving physical and organizational elements. Requirements may be system, stakeholder, user, domain or business-related.",
-        "Az RE bármilyen rendszerre alkalmazható, különösen szoftverközpontú rendszerekben. A követelmények származhatnak rendszer-, stakeholder-, felhasználói-, üzleti- vagy doménszintről."
+        "The syllabus covers fundamental RE principles, documenting requirements in various ways, elaboration techniques, suitable processes, managing existing requirements, and tool support.",
+        "Ez a tananyag lefedi az RE alapelveit, a követelmények dokumentálásának különféle formáit, a kibontás gyakorlatait, a megfelelő folyamatok használatát, a követelmények kezelését és az eszköztámogatást."
     )

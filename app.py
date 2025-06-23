@@ -26,18 +26,23 @@ code = section[:3]
 
 # 🌐 Kétnyelvű tartalom
 if section == "1.1 What is Requirements Engineering?":
-    st.markdown(f"""<div style='background-color:{colors[code]}; padding:1rem; border-radius:0.5rem'>
-    <h3>{icons[code]} 1.1 What is Requirements Engineering?</h3>
-    <p><strong>EN:</strong> Requirements Engineering (RE) is about specifying and managing what stakeholders need a system to do. It distinguishes between three types of requirements: functional, quality, and constraints.</p>
-    <p><strong>HU:</strong> A Requirements Engineering (RE) célja a rendszerekkel szemben támasztott igények meghatározása és kezelése. Három fő követelménytípus létezik: funkcionális, minőségi (quality), és korlátozások (constraints).</p>
-    </div>""", unsafe_allow_html=True)
+    render_section(
+    "1.1 What is Requirements Engineering?",
+    icons[code],
+    colors[code],
+    "Requirements Engineering (RE) is about specifying and managing what stakeholders need a system to do. It distinguishes between three types of requirements: functional, quality, and constraints.",
+    "A Requirements Engineering (RE) célja a rendszerekkel szemben támasztott igények meghatározása és kezelése. Három fő követelménytípus létezik: funkcionális, minőségi (quality), és korlátozások (constraints)."
+    )
 
 elif section == "1.2 Why is RE important?":
-    st.markdown(f"""<div style='background-color:{colors[code]}; padding:1rem; border-radius:0.5rem'>
-    <h3>{icons[code]} 1.2 Why is Requirements Engineering important?</h3>
-    <p><strong>EN:</strong> Good RE reduces risks, improves understanding, enables cost estimation, and lays the foundation for testing. Poor RE leads to unclear or missing requirements.</p>
-    <p><strong>HU:</strong> A jó RE csökkenti a hibák kockázatát, javítja a megértést, segíti a költségbecslést és tesztelést. A rossz RE homályos vagy hiányzó követelményekhez vezet.</p>
-    </div>""", unsafe_allow_html=True)
+    render_section(
+        "1.2 Why is Requirements Engineering important?",
+        icons[code],
+        colors[code],
+        "Good RE reduces risks, improves understanding, enables cost estimation, and lays the foundation for testing. Poor RE leads to unclear or missing requirements.",
+        "A jó RE csökkenti a hibák kockázatát, javítja a megértést, segíti a költségbecslést és tesztelést. A rossz RE homályos vagy hiányzó követelményekhez vezet."
+    )
+
 
 elif section == "1.3 Where is RE applied?":
     st.markdown(f"""<div style='background-color:{colors[code]}; padding:1rem; border-radius:0.5rem'>

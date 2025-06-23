@@ -59,8 +59,8 @@ st.markdown("""
         /* A válaszopciók (label-ek) színe */
             .stRadio label {
                 color: #2c3e50 !important;
-                font-weight: 500;
-        }  /* ⬅️ itt hiányzott a zárókapcsos zárás! */
+            font-weight: 500;
+        }
 
     </style>
 

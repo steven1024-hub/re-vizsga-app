@@ -33,8 +33,8 @@ st.markdown("""
         }
         
         html, body {
+            background-color: #f8fbff;
             color: #2c3e50;
-            background-color: #f5f8fc;
         }
         h1, h2, h3, h4 {
             color: #2c3e50;

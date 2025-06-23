@@ -12,16 +12,17 @@ def render_section(title, icon, color, content_en, content_hu):
         """,
         unsafe_allow_html=True
     )
-# 💄 Egyéni stílus – modern, világos dizájn
+# 💄 Modern üzleti megjelenés – világos háttér + sötét betűk
 st.markdown("""
     <style>
         .stApp {
-            background: linear-gradient(to right, #f8fbff, #eaf2f8);
+            background-image: linear-gradient(to bottom right, #f5f8fc, #ebf0f5);
             font-family: 'Segoe UI', sans-serif;
+            color: #2c3e50;
         }
         html, body {
             color: #2c3e50;
-            background-color: #f8fbff;
+            background-color: #f5f8fc;
         }
         h1, h2, h3, h4 {
             color: #2c3e50;
@@ -38,6 +39,9 @@ st.markdown("""
             padding: 0.75rem;
             border-radius: 0.5rem;
             margin-bottom: 0.5rem;
+        }
+        .stSelectbox > div {
+            background-color: #ffffffcc;
         }
     </style>
 """, unsafe_allow_html=True)

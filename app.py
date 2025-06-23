@@ -1,4 +1,15 @@
 import streamlit as st
+def render_section(title, icon, color, content_en, content_hu):
+    st.markdown(
+        f"""
+        <div style='background-color: {color}; padding:1rem; border-radius:0.75rem; margin-bottom:1.5rem'>
+            <h3>{icon} {title}</h3>
+            <p><strong>EN:</strong> {content_en}</p>
+            <p><strong>HU:</strong> {content_hu}</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.set_page_config(page_title="📘 RE Vizsgafelkészítő – Modul 1", layout="wide")
 st.title("📘 Introduction and Overview of Requirements Engineering (Modul 1)")

@@ -2,7 +2,17 @@ import streamlit as st
 
 # 🌐 Egységes megjelenítésű HTML szekciókhoz
 def render_section(title, icon, color, content_en, content_hu):
-    # 💄 Egyéni stílus – modern, világos dizájn
+    st.markdown(
+        f"""
+        <div style='background-color: {color}; padding:1rem; border-radius:0.75rem; margin-bottom:1.5rem; color:#000000'>
+            <h3>{icon} {title}</h3>
+            <p><strong>EN:</strong> {content_en}</p>
+            <p><strong>HU:</strong> {content_hu}</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+# 💄 Egyéni stílus – modern, világos dizájn
 st.markdown("""
     <style>
         .stApp {
@@ -31,16 +41,6 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-    st.markdown(
-        f"""
-        <div style='background-color: {color}; padding:1rem; border-radius:0.75rem; margin-bottom:1.5rem; color:#000000'>
-            <h3>{icon} {title}</h3>
-            <p><strong>EN:</strong> {content_en}</p>
-            <p><strong>HU:</strong> {content_hu}</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
 
 # Alapbeállítások
 st.set_page_config(page_title="📘 RE Vizsgafelkészítő – Modul 1", layout="wide")

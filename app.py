@@ -3,42 +3,40 @@ import streamlit as st
 # 🌐 Egységes megjelenítésű HTML szekciókhoz
 def render_section(title, icon, color, content_en, content_hu):
     st.markdown(
-    f"""
-    <div style="background-color: {color};
-                padding:1.5rem;
-                border-radius:0.75rem;
-                margin-bottom:2rem;
-                border: 1px solid #ccc;
-                box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
-                color: #2c3e50;">
-        <h3>{icon} {title}</h3>
-        <p><strong>EN:</strong> {content_en}</p>
-        <p><strong>HU:</strong> {content_hu}</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-# 💄 Modern üzleti megjelenés – világos háttér + sötét betűk
+        f"""
+        <div style="background-color: {color};
+                    padding:1.5rem;
+                    border-radius:0.75rem;
+                    margin-bottom:2rem;
+                    border: 1px solid #ccc;
+                    box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
+                    color: #ffffff;">
+            <h3>{icon} {title}</h3>
+            <p><strong>EN:</strong> {content_en}</p>
+            <p><strong>HU:</strong> {content_hu}</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+# 💄 Modern üzleti megjelenés – navy blue háttér + világos tartalom
 st.markdown("""
     <style>
         .stApp {
-            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/ERP_components_diagram.png/1200px-ERP_components_diagram.png");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-            background-attachment: fixed;
-            background-color: #f8fbff;
+            background-color: #001f3f;
             font-family: 'Segoe UI', sans-serif;
-            color: #2c3e50;
+            color: #ffffff;
         }
-        
+
         html, body {
-            background-color: #f8fbff;
-            color: #2c3e50;
+            background-color: #001f3f;
+            color: #ffffff;
         }
+
         h1, h2, h3, h4 {
-            color: #2c3e50;
+            color: #ffffff;
         }
+
         .stButton > button {
             background-color: #2f80ed;
             color: white;
@@ -46,47 +44,29 @@ st.markdown("""
             border-radius: 0.5rem;
             padding: 0.5rem 1rem;
         }
-        /* Rádió kérdésdoboz */
+
         .stRadio > div {
-            background-color: #ffffff;
-            color: #2c3e50 !important;
+            background-color: #003366;
+            color: #ffffff;
             padding: 0.75rem;
             border-radius: 0.5rem;
             margin-bottom: 0.5rem;
-            border: 1px solid #ddd;
+            border: 1px solid #4d648d;
         }
 
-        /* A válaszopciók (label-ek) színe */
-            .stRadio label {
-                color: #2c3e50 !important;
+        .stRadio label {
+            color: #ffffff !important;
             font-weight: 500;
         }
 
-    </style>
-
-        /* Kérdés fejléc (ha van formában) */
         .stForm label {
-            color: #2c3e50 !important;
-        }
-
-        /* Gombok */
-        .stButton > button {
-            background-color: #2f80ed;
-            color: white;
-            font-weight: 600;
-            border-radius: 0.5rem;
-            padding: 0.5rem 1rem;
+            color: #ffffff !important;
         }
 
         .stSelectbox > div {
-            background-color: #ffffffcc;
+            background-color: #ffffff10;
+            color: #ffffff;
         }
-        /* ⬅️ Új blokk: kérdéscímkék */
-        .stRadio label {
-            color: #2c3e50 !important;
-            font-weight: 500;
-    }
-
     </style>
 """, unsafe_allow_html=True)
 
@@ -186,48 +166,47 @@ elif section == "✅ Kérdőíves Vizsga":
     total = 6
 
     with st.form("modul1_quiz"):
-        st.write("Válaszolj a következő kérdésekre:")
+        st.markdown("### ❓ Válaszolj az alábbi kérdésekre:")
 
-        q1 = st.radio("1. Mi a Requirements Engineering elsődleges célja?", [
+        q1 = st.radio("1️⃣ Mi a Requirements Engineering elsődleges célja?", [
             "Rendszerek tesztelése és karbantartása",
             "Stakeholder-ek igényeinek meghatározása és kezelése",
             "Projektköltségek kiszámítása"
-        ])
+        ], key="q1")
 
-        q2 = st.radio("2. Mi jellemző a jó RE-re?", [
+        q2 = st.radio("2️⃣ Mi jellemző a jó RE-re?", [
             "Csak a fejlesztés végén kezdődik",
             "Minimalizálja a dokumentációt",
             "Csökkenti a hibakockázatot, segíti a megértést és a becslést"
-        ])
+        ], key="q2")
 
-        q3 = st.radio("3. Milyen rendszerekre alkalmazható RE?", [
+        q3 = st.radio("3️⃣ Milyen rendszerekre alkalmazható RE?", [
             "Csak webes alkalmazásokra",
             "Mindenféle rendszerre, különösen komplex szoftveres rendszerekre",
             "Kizárólag üzleti szoftverekre"
-        ])
+        ], key="q3")
 
-        q4 = st.radio("4. Melyik NEM tartozik az RE fő tevékenységei közé?", [
+        q4 = st.radio("4️⃣ Melyik NEM tartozik az RE fő tevékenységei közé?", [
             "Követelmények feltárása",
             "Kódoptimalizálás",
             "Követelmények érvényesítése"
-        ])
+        ], key="q4")
 
-        q5 = st.radio("5. Milyen szerepet tölt be a Requirements Engineer?", [
+        q5 = st.radio("5️⃣ Milyen szerepet tölt be a Requirements Engineer?", [
             "Hardvertechnikus",
             "A problémák és megoldások közötti kapcsolatot teremti meg",
             "Marketing asszisztens"
-        ])
+        ], key="q5")
 
-        q6 = st.radio("6. Mit ölel fel az RE alapszintű tananyaga?", [
+        q6 = st.radio("6️⃣ Mit ölel fel az RE alapszintű tananyaga?", [
             "Projektmenedzsment és erőforrás-allokáció",
             "Tesztelési stratégiák és hibakeresés",
             "RE alapelvek, dokumentálás, kibontás, folyamatok, menedzsment, eszközök"
-        ])
+        ], key="q6")
 
-        submitted = st.form_submit_button("Eredmények megtekintése")
+        submitted = st.form_submit_button("📊 Eredmény megtekintése")
 
     if submitted:
-        # Értékelés
         if q1 == "Stakeholder-ek igényeinek meghatározása és kezelése": score += 1
         if q2 == "Csökkenti a hibakockázatot, segíti a megértést és a becslést": score += 1
         if q3 == "Mindenféle rendszerre, különösen komplex szoftveres rendszerekre": score += 1
@@ -238,7 +217,6 @@ elif section == "✅ Kérdőíves Vizsga":
         percent = round((score / total) * 100)
         st.subheader(f"🎯 Eredményed: {score}/{total} – {percent}%")
 
-        # Feedback blokk
         if percent == 100:
             st.success("🌟 Gratulálunk! Teljesítetted a Modul 1 összes kérdését hibátlanul!")
             st.balloons()
@@ -251,4 +229,5 @@ elif section == "✅ Kérdőíves Vizsga":
             st.error("😅 Ne csüggedj! A tanulókártyák segíthetnek az ismétlésben.")
 
         st.markdown("---")
-        st.markdown("👉 **Tipp**: Próbáld ki újra a tanulókártyákat vagy nézd át az elméleti összefoglalót, mielőtt továbblépnél a 2. modulra.")
+        st.markdown("👉 Tipp: Próbáld ki újra a tanulókártyákat vagy nézd át az elméleti összefoglalót, mielőtt továbblépsz a 2. modulra.")
+

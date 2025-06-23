@@ -76,7 +76,7 @@ st.title("📘 Introduction and Overview of Requirements Engineering (Modul 1)")
 st.markdown("#### 💡 Ismerd meg a Requirements Engineering alapjait – angolul és magyarul")
 
 # Nézetválasztó
-section = st.selectbox("Válassz nézetet:", [
+options = [
     "📘 Elméleti áttekintés",
     "🎴 Tanulókártyák",
     "✅ Kérdőíves Vizsga"

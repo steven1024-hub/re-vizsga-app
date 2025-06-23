@@ -80,11 +80,13 @@ options = [
     "📘 Elméleti áttekintés",
     "🎴 Tanulókártyák",
     "✅ Kérdőíves Vizsga"
-])
+]
+
 if st.session_state.get("modul1_completed"):
-    options.append("📗 Fundamental Principles of RE")  # Modul 2 címe
+    options.append("📗 Fundamental Principles of RE")
 
 section = st.selectbox("Válassz nézetet:", options)
+
 
 # Színek és ikonok
 colors = {

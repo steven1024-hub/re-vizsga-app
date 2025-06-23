@@ -295,5 +295,5 @@ else:
 
     render_section(
         "2.5 Disciplined and adaptive RE practices", "🛠️", "#3d5c3d",
-        "RE requires systematic
+        "RE requires systematic"
     )

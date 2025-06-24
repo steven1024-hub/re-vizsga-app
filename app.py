@@ -90,13 +90,10 @@ elif st.session_state["modul_state"] == 2:
 
 # Ez a választó komponens jeleníti meg a felületet
 view = st.radio("🔍 Nézetválasztó", options)
-# Modulváltás: ha kiválasztották a Modul 2-t menüből, aktiváljuk
-if view == "📗 Fundamental Principles of RE":
-    st.session_state["modul_state"] = 2
-    st.rerun()
 
 # Visszalépés lehetősége Modul 1-re
 if view == "🔙 Vissza Modul 1-re":
+    st.info("🔄 Visszaváltottál a Modul 1-re.")
     st.session_state["modul_state"] = 1
     st.rerun()
 
@@ -109,10 +106,6 @@ if st.button("Ugrás a 2. blokkra") and not st.session_state["jump_triggered"]:
     st.session_state["go_to_second_block"] = True
     st.session_state["jump_triggered"] = True
     st.rerun()
-
-# Ha az 1. modult teljesítette a felhasználó, akkor feloldjuk a 2. modult
-if st.session_state.get("modul1_completed"):
-    options.append("📗 Fundamental Principles of RE")
 
 # Színek és ikonok
 colors = {
@@ -300,6 +293,7 @@ elif st.session_state["modul_state"] == 2:
         # Ide kerülhet a második kérdőív logikája később
 
     elif view == "🔙 Vissza Modul 1-re":
+        st.info("🔄 Visszaváltottál az első modulra.")
         st.session_state["modul_state"] = 1
         st.rerun()
         

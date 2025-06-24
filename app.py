@@ -121,7 +121,7 @@ icons = {
     "1.1": "📘", "1.2": "💡", "1.3": "🌍", "1.4": "⚙️", "1.5": "👤", "1.6": "🎓"
 }
 # 📘 Elméleti áttekintés
-if section == "📘 Elméleti áttekintés":
+if view == "📄 Elméleti áttekintés":
     chosen = st.selectbox("Válassz alfejezetet:", [
         "1.1 What is Requirements Engineering?",
         "1.2 Why is RE important?",
@@ -176,7 +176,7 @@ if section == "📘 Elméleti áttekintés":
 
 
 # 🎴 Tanulókártyák
-elif section == "🎴 Tanulókártyák":
+elif view == "🎴 Tanulókártyák":
     st.subheader("🧠 Tanulókártyás gyakorlás")
     flashcards = {
         "Mi a RE célja?": "A stakeholder-ek igényeinek meghatározása és kezelése.",
@@ -191,7 +191,7 @@ elif section == "🎴 Tanulókártyák":
         with st.expander(f"❓ {question}"):
             st.write(f"✅ {answer}")
 # ✅ Kérdőíves Vizsga
-elif section == "✅ Kérdőíves Vizsga":
+elif view  == "✅ Kérdőíves Vizsga":
     st.subheader("✅ Kérdőíves vizsga – Modul 1")
     score = 0
     total = 6

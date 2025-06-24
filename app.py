@@ -117,10 +117,11 @@ elif st.session_state["modul_state"] == 2:
             "Mit értünk validálás alatt?": "Az igények teljesülésének igazolása már a RE során.",
             "Miért természetes a követelmények evolúciója?": "Külső és belső tényezők miatt változnak az igények.",
             "Mit jelent az innováció az RE-ben?": "A stakeholderek elvárásait felülmúló megoldások keresése.",
-            "Mi a rendszerszemlélet szerepe?": "Fegyelmezett és célhoz illesztett RE gyakorlat kialakítása."}
-            for k, v in flashcards.items():
-                with st.expander(f"❓ {k}"):
-                    st.write(f"✅ {v}")
+            "Mi a rendszerszemlélet szerepe?": "Fegyelmezett és célhoz illesztett RE gyakorlat kialakítása."
+        }
+        for k, v in flashcards.items():
+            with st.expander(f"❓ {k}"):
+                st.write(f"✅ {v}")
 
     elif view == "✅ Kérdőíves Vizsga":
         st.subheader("📗 Modul 2 – Kérdőíves vizsga")

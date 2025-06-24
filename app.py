@@ -100,7 +100,8 @@ elif st.session_state["modul_state"] == 2:
             "2.6 Probléma–Követelmény–Megoldás": "Problem, requirement, and solution are intertwined...",
             "2.7 Validálás": "Non-validated requirements are useless...",
             "2.8 Evolúció": "Changing requirements are the normal case...",
-            "2.9 Innováció és fegyelmezettség": "Good RE includes innovation and systematic discipline..."}
+            "2.9 Innováció és fegyelmezettség": "Good RE includes innovation and systematic discipline..."
+            }
             selected = st.selectbox("📘 Alapelv kiválasztása:", list(alapelvek.keys()))
             render_section(selected, "📗", "#3d5c3d", alapelvek[selected], "🔄 A magyar változat itt lesz.")
 

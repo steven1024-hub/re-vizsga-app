@@ -255,10 +255,7 @@ elif view  == "✅ Kérdőíves Vizsga":
                 st.balloons()
                 st.success("🌟 Hibátlan teljesítmény! Gratulálunk!")
                 st.markdown("### 🎓 **Modul 1 teljesítve!**\n\nKiváló alapokat szereztél a következő témakörhöz.")
-
-            st.markdown("### 🎓 **Modul 1 teljesítve!**\n\nKiváló alapokat szereztél a következő témakörhöz.")
-            st.markdown("---")
-            st.info("👉 Kattints lent a folytatáshoz a Modul 2-ben!")
+                st.info("👉 Kattints lent a folytatáshoz a Modul 2-ben!")
 
             # Átlépés gombbal, nem azonnali rerun
             if st.button("➡️ Továbblépés Modul 2-re"):
@@ -271,7 +268,6 @@ elif view  == "✅ Kérdőíves Vizsga":
         if percent == 100:
             st.success("🌟 Gratulálunk! Teljesítetted a Modul 1 összes kérdését hibátlanul!")
             st.balloons()
-            st.markdown("### 🎓 **Modul 1 teljesítve!**\n\nKiváló alapokat szereztél a következő témakörhöz.")
         elif percent >= 80:
             st.success("🎉 Nagyon jó! Már csak egy kis finomhangolás van hátra.")
         elif percent >= 60:

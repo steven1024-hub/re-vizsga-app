@@ -74,9 +74,13 @@ st.markdown("""
 st.set_page_config(page_title="📘 RE Vizsgafelkészítő – Modul 1", layout="wide")
 if "go_to_second_block" not in st.session_state:
     st.session_state["go_to_second_block"] = False
-if st.button("Ugrás a 2. blokkra"):
+if "jump_triggered" not in st.session_state:
+    st.session_state["jump_triggered"] = False
+
+if st.button("Ugrás a 2. blokkra") and not st.session_state["jump_triggered"]:
     st.session_state["go_to_second_block"] = True
-    st.experimental_rerun()
+    st.session_state["jump_triggered"] = True
+    st.rerun()
 
 st.title("📘 Introduction and Overview of Requirements Engineering (Modul 1)")
 st.markdown("#### 💡 Ismerd meg a Requirements Engineering alapjait – angolul és magyarul")

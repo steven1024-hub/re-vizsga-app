@@ -264,38 +264,17 @@ render_section("Első blokk", "📌", "#228B22", "First block EN", "Első blokk 
 # Ha ugorni kell a 2. blokkra
 if st.session_state.get("go_to_second_block"):
     render_section("Második blokk", "🧩", "#4455cc", "Second block EN", "Második blokk HU")
-    st.session_state["go_to_second_block"] = False  # Visszaállítjuk, hogy ne ismételjen
-else:
-    # További tartalom, ha nem ugrottunk
+    
+    # Visszalépés gomb
+    if st.button("🔙 Vissza az összes blokkhoz"):
+        st.session_state["go_to_second_block"] = False
+        st.experimental_rerun()
+# Ha nem ugrunk a 2. blokkra → minden más blokk megjelenik
+elif not st.session_state.get("go_to_second_block"):
     render_section("Harmadik blokk", "🎯", "#cc3344", "Third block EN", "Harmadik blokk HU")
-
-    render_section(
-        "2.1 Overview of Principles", "📗", "#3d5c3d",
-        "Requirements Engineering is governed by nine universal principles: value-orientation, stakeholder orientation, shared understanding, context awareness, separation of concerns between problems, requirements and solutions, validation, evolution, innovation, and systematic work. These principles apply across RE tasks, regardless of domain or method.",
-        "A Requirements Engineering kilenc univerzális alapelv mentén működik: értékorientáltság, stakeholder-központúság, közös megértés, kontextus-tudatosság, a problémák, követelmények és megoldások szétválasztása, érvényesítés, változáskezelés, innováció, valamint rendszerszemléletű és fegyelmezett munka."
-    )
-
-    render_section(
-        "2.2 Stakeholder needs and shared understanding", "👥", "#3d5c3d",
-        "Successful RE is grounded in understanding and satisfying stakeholder needs. It establishes shared understanding among stakeholders, developers and Requirements Engineers, through explicit documentation and trust-building practices.",
-        "A sikeres RE alapja a stakeholderek igényeinek mély megértése és kielégítése. A közös megértést kifejezett dokumentáción, visszacsatoláson és a bizalom kialakításán keresztül valósítja meg a stakeholderek, fejlesztők és RE-szakemberek között."
-    )
-
-    render_section(
-        "2.3 Context and system boundaries", "🌐", "#3d5c3d",
-        "RE considers the system in its context. Understanding what is inside and outside the system boundary is critical. External actors, regulations and assumptions about the environment must be captured.",
-        "Az RE a rendszert annak környezetében értelmezi. Fontos tisztázni, mi esik a rendszer határain belül és kívül. A külső szereplők, szabályozások és a kontextusra vonatkozó feltételezések rögzítése kulcsfontosságú."
-    )
-
-    render_section(
-        "2.4 Managing change and fostering innovation", "♻️", "#3d5c3d",
-        "Requirements evolve. RE must embrace change while maintaining traceability and consistency. Beyond fulfilling explicit needs, RE should strive to surprise and delight users through innovative solutions.",
-        "A követelmények változnak. Az RE-nek fel kell készülnie a változások kezelésére, miközben biztosítja a nyomon követhetőséget és a konzisztenciát. Az RE célja nem csupán a kifejezett igények teljesítése, hanem az is, hogy innovatív megoldásokkal örömet szerezzen a felhasználóknak."
-    )
-
-    render_section(
-    "2.5 Disciplined and adaptive RE practices", "🛠️", "#3d5c3d",
-    "RE requires systematic analysis and continuous validation.",
-    "A RE módszeres elemzést és folyamatos validálást igényel."
-    )
+    render_section("2.1 Overview of Principles", "📗", "#3d5c3d", "Requirements Engineering is governed by nine universal principles: value-orientation, stakeholder orientation, shared understanding, context awareness, separation of concerns between problems, requirements and solutions, validation, evolution, innovation, and systematic work. These principles apply across RE tasks, regardless of domain or method.", "A Requirements Engineering kilenc univerzális alapelv mentén működik: értékorientáltság, stakeholder-központúság, közös megértés, kontextus-tudatosság, a problémák, követelmények és megoldások szétválasztása, érvényesítés, változáskezelés, innováció, valamint rendszerszemléletű és fegyelmezett munka.")
+    render_section("2.2 Stakeholder needs and shared understanding", "👥", "#3d5c3d", "Successful RE is grounded in understanding and satisfying stakeholder needs. It establishes shared understanding among stakeholders, developers and Requirements Engineers, through explicit documentation and trust-building practices.", "A sikeres RE alapja a stakeholderek igényeinek mély megértése és kielégítése. A közös megértést kifejezett dokumentáción, visszacsatoláson és a bizalom kialakításán keresztül valósítja meg a stakeholderek, fejlesztők és RE-szakemberek között.")
+    render_section("2.3 Context and system boundaries", "🌐", "#3d5c3d","RE considers the system in its context. Understanding what is inside and outside the system boundary is critical. External actors, regulations and assumptions about the environment must be captured.", "Az RE a rendszert annak környezetében értelmezi. Fontos tisztázni, mi esik a rendszer határain belül és kívül. A külső szereplők, szabályozások és a kontextusra vonatkozó feltételezések rögzítése kulcsfontosságú.")
+    render_section("2.4 Managing change and fostering innovation", "♻️", "#3d5c3d", "Requirements evolve. RE must embrace change while maintaining traceability and consistency. Beyond fulfilling explicit needs, RE should strive to surprise and delight users through innovative solutions.", "A követelmények változnak. Az RE-nek fel kell készülnie a változások kezelésére, miközben biztosítja a nyomon követhetőséget és a konzisztenciát. Az RE célja nem csupán a kifejezett igények teljesítése, hanem az is, hogy innovatív megoldásokkal örömet szerezzen a felhasználóknak.")
+    render_section("2.5 Disciplined and adaptive RE practices", "🛠️", "#3d5c3d", "RE requires systematic analysis and continuous validation.", "A RE módszeres elemzést és folyamatos validálást igényel.")
 

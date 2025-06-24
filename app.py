@@ -294,6 +294,8 @@ else:
     )
 
     render_section(
-        "2.5 Disciplined and adaptive RE practices", "🛠️", "#3d5c3d",
-        "RE requires systematic"
+    "2.5 Disciplined and adaptive RE practices", "🛠️", "#3d5c3d",
+    "RE requires systematic analysis and continuous validation.",
+    "A RE módszeres elemzést és folyamatos validálást igényel."
     )
+

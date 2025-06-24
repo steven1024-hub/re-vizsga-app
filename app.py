@@ -1,4 +1,6 @@
 import streamlit as st
+if "modul_state" not in st.session_state:
+    st.session_state["modul_state"] = 1
 
 # 🌐 Egységes megjelenítésű HTML szekciókhoz
 def render_section(title, icon, color, content_en, content_hu):
@@ -72,6 +74,32 @@ st.markdown("""
 
 # Alapbeállítások
 st.set_page_config(page_title="📘 RE Vizsgafelkészítő – Modul 1", layout="wide")
+# Dinamikus fejléc és nézetopciók
+if "modul1_completed" not in st.session_state:
+    st.session_state["modul1_completed"] = False
+
+if st.session_state["modul_state"] == 1:
+    st.title("📘 Introduction and Overview of Requirements Engineering (Modul 1)")
+    st.markdown("#### 💡 Ismerd meg a Requirements Engineering alapjait – angolul és magyarul")
+    options = ["📄 Elméleti áttekintés", "🎴 Tanulókártyák", "✅ Kérdőíves Vizsga"]
+    
+elif st.session_state["modul_state"] == 2:
+    st.title("📗 Fundamental Principles of RE (Modul 2)")
+    st.markdown("#### 💡 A Requirements Engineering univerzális alapelvei – angolul és magyarul")
+    options = ["📄 Elméleti áttekintés", "🎴 Tanulókártyák", "✅ Kérdőíves Vizsga", "🔙 Vissza Modul 1-re"]
+
+# Ez a választó komponens jeleníti meg a felületet
+view = st.radio("🔍 Nézetválasztó", options)
+# Modulváltás: ha kiválasztották a Modul 2-t menüből, aktiváljuk
+if view == "📗 Fundamental Principles of RE":
+    st.session_state["modul_state"] = 2
+    st.rerun()
+
+# Visszalépés lehetősége Modul 1-re
+if view == "🔙 Vissza Modul 1-re":
+    st.session_state["modul_state"] = 1
+    st.rerun()
+
 if "go_to_second_block" not in st.session_state:
     st.session_state["go_to_second_block"] = False
 if "jump_triggered" not in st.session_state:
@@ -82,21 +110,9 @@ if st.button("Ugrás a 2. blokkra") and not st.session_state["jump_triggered"]:
     st.session_state["jump_triggered"] = True
     st.rerun()
 
-st.title("📘 Introduction and Overview of Requirements Engineering (Modul 1)")
-st.markdown("#### 💡 Ismerd meg a Requirements Engineering alapjait – angolul és magyarul")
-
-# Nézetválasztó
-options = [
-    "📘 Elméleti áttekintés",
-    "🎴 Tanulókártyák",
-    "✅ Kérdőíves Vizsga"
-]
-
 # Ha az 1. modult teljesítette a felhasználó, akkor feloldjuk a 2. modult
 if st.session_state.get("modul1_completed"):
     options.append("📗 Fundamental Principles of RE")
-
-section = st.selectbox("Válassz nézetet:", options)
 
 # Színek és ikonok
 colors = {
@@ -242,6 +258,9 @@ elif section == "✅ Kérdőíves Vizsga":
         if score >= 5:
             st.success("✅ Teljesítetted az 1. modult — feloldva a következő szint!")
             st.session_state["modul1_completed"] = True
+            st.session_state["modul_state"] = 2
+            st.rerun()
+
         else:
             st.warning("🔒 A modul 2 csak akkor elérhető, ha legalább 5 helyes válaszod van.")
         
@@ -259,26 +278,29 @@ elif section == "✅ Kérdőíves Vizsga":
         st.markdown("---")
         st.markdown("👉 Tipp: Próbáld ki újra a tanulókártyákat vagy nézd át az elméleti összefoglalót, mielőtt továbblépsz a 2. modulra.")
 # 📗 Modul 2 – csak akkor választható, ha előző modul teljesült
-elif section == "📗 Fundamental Principles of RE":
-    st.subheader("📗 Fundamental Principles of Requirements Engineering – Modul 2")
-    st.markdown("✅ Ez a szakasz részletesen bemutatja az RE kilenc alapelvét és azok gyakorlati alkalmazását.")
-    # Első blokk
-    render_section("Első blokk", "📌", "#228B22", "First block EN", "Első blokk HU")
-
-    # Ha ugorni kell a 2. blokkra
-    if st.session_state.get("go_to_second_block"):
-        render_section("Második blokk", "🧩", "#4455cc", "Second block EN", "Második blokk HU")
-    
-        # Visszalépés gomb
-        if st.button("🔙 Vissza az összes blokkhoz"):
-            st.session_state["go_to_second_block"] = False
-            st.experimental_rerun()
-    # Ha nem ugrunk a 2. blokkra → minden más blokk megjelenik
-    else:
+elif st.session_state["modul_state"] == 2:
+    if view == "📄 Elméleti áttekintés":
+        st.subheader("📗 Modul 2 – Elméleti áttekintés")
+        st.markdown("✅ Ez a szakasz részletesen bemutatja az RE kilenc alapelvét és azok gyakorlati alkalmazását.")
+        # Első blokk
         render_section("Harmadik blokk", "🎯", "#cc3344", "Third block EN", "Harmadik blokk HU")
         render_section("2.1 Overview of Principles", "📗", "#3d5c3d", "Requirements Engineering is governed by nine universal principles: value-orientation, stakeholder orientation, shared understanding, context awareness, separation of concerns between problems, requirements and solutions, validation, evolution, innovation, and systematic work. These principles apply across RE tasks, regardless of domain or method.", "A Requirements Engineering kilenc univerzális alapelv mentén működik: értékorientáltság, stakeholder-központúság, közös megértés, kontextus-tudatosság, a problémák, követelmények és megoldások szétválasztása, érvényesítés, változáskezelés, innováció, valamint rendszerszemléletű és fegyelmezett munka.")
         render_section("2.2 Stakeholder needs and shared understanding", "👥", "#3d5c3d", "Successful RE is grounded in understanding and satisfying stakeholder needs. It establishes shared understanding among stakeholders, developers and Requirements Engineers, through explicit documentation and trust-building practices.", "A sikeres RE alapja a stakeholderek igényeinek mély megértése és kielégítése. A közös megértést kifejezett dokumentáción, visszacsatoláson és a bizalom kialakításán keresztül valósítja meg a stakeholderek, fejlesztők és RE-szakemberek között.")
         render_section("2.3 Context and system boundaries", "🌐", "#3d5c3d","RE considers the system in its context. Understanding what is inside and outside the system boundary is critical. External actors, regulations and assumptions about the environment must be captured.", "Az RE a rendszert annak környezetében értelmezi. Fontos tisztázni, mi esik a rendszer határain belül és kívül. A külső szereplők, szabályozások és a kontextusra vonatkozó feltételezések rögzítése kulcsfontosságú.")
         render_section("2.4 Managing change and fostering innovation", "♻️", "#3d5c3d", "Requirements evolve. RE must embrace change while maintaining traceability and consistency. Beyond fulfilling explicit needs, RE should strive to surprise and delight users through innovative solutions.", "A követelmények változnak. Az RE-nek fel kell készülnie a változások kezelésére, miközben biztosítja a nyomon követhetőséget és a konzisztenciát. Az RE célja nem csupán a kifejezett igények teljesítése, hanem az is, hogy innovatív megoldásokkal örömet szerezzen a felhasználóknak.")
         render_section("2.5 Disciplined and adaptive RE practices", "🛠️", "#3d5c3d", "RE requires systematic analysis and continuous validation.", "A RE módszeres elemzést és folyamatos validálást igényel.")
+       
+    elif view == "🎴 Tanulókártyák":
+        st.subheader("📗 Modul 2 – Tanulókártyák")
+        st.markdown("💡 Kérdés–válasz alapú segédlet a kilenc alapelvhez. (Ide jöhet majd a kártyalista.)")
+
+    elif view == "✅ Kérdőíves Vizsga":
+        st.subheader("📗 Modul 2 – Kérdőív")
+        st.markdown("🧪 A második modulhoz tartozó kérdőív itt jelenik meg.")
+        # Ide kerülhet a második kérdőív logikája később
+
+    elif view == "🔙 Vissza Modul 1-re":
+        st.session_state["modul_state"] = 1
+        st.rerun()
+        
 

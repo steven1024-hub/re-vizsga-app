@@ -247,12 +247,21 @@ elif view  == "✅ Kérdőíves Vizsga":
 
         percent = round((score / total) * 100)
         st.subheader(f"🎯 Eredményed: {score}/{total} – {percent}%")
-        
         if score >= 5:
             st.success("✅ Teljesítetted az 1. modult — feloldva a következő szint!")
             st.session_state["modul1_completed"] = True
-            st.session_state["modul_state"] = 2
-            st.rerun()
+
+            if percent == 100:
+            st.balloons()
+
+            st.markdown("### 🎓 **Modul 1 teljesítve!**\n\nKiváló alapokat szereztél a következő témakörhöz.")
+            st.markdown("---")
+            st.info("👉 Kattints lent a folytatáshoz a Modul 2-ben!")
+
+            # Átlépés gombbal, nem azonnali rerun
+            if st.button("➡️ Továbblépés Modul 2-re"):
+                st.session_state["modul_state"] = 2
+                st.rerun()
 
         else:
             st.warning("🔒 A modul 2 csak akkor elérhető, ha legalább 5 helyes válaszod van.")

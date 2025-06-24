@@ -252,7 +252,9 @@ elif view  == "✅ Kérdőíves Vizsga":
             st.session_state["modul1_completed"] = True
 
             if percent == 100:
-            st.balloons()
+                st.balloons()
+                st.success("🌟 Hibátlan teljesítmény! Gratulálunk!")
+                st.markdown("### 🎓 **Modul 1 teljesítve!**\n\nKiváló alapokat szereztél a következő témakörhöz.")
 
             st.markdown("### 🎓 **Modul 1 teljesítve!**\n\nKiváló alapokat szereztél a következő témakörhöz.")
             st.markdown("---")
